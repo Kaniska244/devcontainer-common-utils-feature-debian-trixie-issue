@@ -1,6 +1,6 @@
 services:
   app:
-    image: kaniska487/myrepo:1.1.2
+    image: kaniska487/myrepo:1.1.3
     volumes:
       - ..:/workspace
     command: sleep infinity
