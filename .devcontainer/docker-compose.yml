@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/philly706869/dcufdti
+    image: kaniska487/myrepo:1.1.2
     volumes:
       - ..:/workspace
     command: sleep infinity

@@ -17,17 +17,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v5
 
-      - name: Login to GHCR
+      - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build image and push to registry
         uses: devcontainers/ci@v0.3
         with:
-          imageName: ghcr.io/${{ github.repository_owner }}/dcufdti
-          imageTag: ${{ inputs.tag }}
+          imageName: kaniska487/myrepo
+          imageTag: 1.1.2
           push: always
           subFolder: src
